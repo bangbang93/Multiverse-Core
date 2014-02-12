@@ -41,7 +41,9 @@ public class WorldProperties extends SerializationConfig {
 
     static {
         PROPERTY_ALIASES = new HashMap<String, String>();
-        PROPERTY_ALIASES.put("curr", "currency");
+        PROPERTY_ALIASES.put("curr", "entryfee.currency");
+        PROPERTY_ALIASES.put("currency", "entryfee.currency");
+        PROPERTY_ALIASES.put("price", "entryfee.amount");
         PROPERTY_ALIASES.put("scaling", "scale");
         PROPERTY_ALIASES.put("aliascolor", "color");
         PROPERTY_ALIASES.put("heal", "autoHeal");
@@ -62,12 +64,17 @@ public class WorldProperties extends SerializationConfig {
         PROPERTY_ALIASES.put("allowfly", "allowFlight");
     }
 
+    private final boolean keepSpawnFallback;
+
     public WorldProperties(Map<String, Object> values) {
         super(values);
+        Object keepSpawnObject = values.get("keepSpawnInMemory");
+        keepSpawnFallback = keepSpawnObject == null || Boolean.parseBoolean(keepSpawnObject.toString());
     }
 
     public WorldProperties() {
         super();
+        keepSpawnFallback = true;
     }
 
     public WorldProperties(final boolean fixSpawn, final Environment environment) {
@@ -76,6 +83,7 @@ public class WorldProperties extends SerializationConfig {
             this.adjustSpawn = false;
         }
         setScaling(getDefaultScale(environment));
+        keepSpawnFallback = true;
     }
 
     void setMVWorld(MVWorld world) {
@@ -525,6 +533,9 @@ public class WorldProperties extends SerializationConfig {
     }
 
     public boolean isKeepingSpawnInMemory() {
+        if (keepSpawnInMemory == null) {
+            return keepSpawnFallback;
+        }
         return this.keepSpawnInMemory.get();
     }
 

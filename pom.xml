@@ -22,9 +22,9 @@
         </repository>
         <!-- Required for Metrics -->
         <repository>
-        <id>Plugin Metrics</id>
-        <url>http://repo.mcstats.org/content/repositories/public</url>
-    </repository>
+            <id>Plugin Metrics</id>
+            <url>http://repo.mcstats.org/content/repositories/public</url>
+        </repository>
         <!-- Required for Vault -->
         <!--repository>
             <id>herocraft</id>
@@ -183,7 +183,7 @@
                                     <include>me.main__.util:SerializationConfig</include>
                                     <include>com.pneumaticraft.commandhandler:CommandHandler</include>
                                     <include>com.dumptruckman.minecraft:buscript</include>
-                                    <include>org.mcstats:metrics</include>
+                                    <include>org.mcstats.bukkit:metrics</include>
                                     <include>com.dumptruckman.minecraft:Logging</include>
                                     <include>com.fernferret.allpay:AllPay</include>
                                 </includes>
