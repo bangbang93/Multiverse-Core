@@ -22,8 +22,8 @@
         </repository>
         <!-- Required for Metrics -->
         <repository>
-            <id>mcstats</id>
-            <url>http://repo.mcstats.org/content/repositories/snapshots</url>
+            <id>Plugin Metrics</id>
+            <url>http://repo.mcstats.org/content/repositories/public</url>
         </repository>
         <!-- Required for Vault -->
         <!--repository>
@@ -183,7 +183,7 @@
                                     <include>me.main__.util:SerializationConfig</include>
                                     <include>com.pneumaticraft.commandhandler:CommandHandler</include>
                                     <include>com.dumptruckman.minecraft:buscript</include>
-                                    <include>org.mcstats:metrics</include>
+                                    <include>org.mcstats.bukkit:metrics</include>
                                     <include>com.dumptruckman.minecraft:Logging</include>
                                     <include>com.fernferret.allpay:AllPay</include>
                                 </includes>
@@ -258,7 +258,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.4.5-R0.2</version>
+            <version>1.7.2-R0.2</version>
             <!-- If you want the lates, use this -->
             <!-- <version>LATEST</version> -->
             <type>jar</type>
@@ -292,7 +292,7 @@
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>Vault</artifactId>
-            <version>1.2.20</version>
+            <version>1.2.27</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
@@ -317,9 +317,9 @@
         <!-- End of Buscript Dependency -->
         <!-- Start of Metrics Dependency -->
         <dependency>
-            <groupId>org.mcstats</groupId>
+            <groupId>org.mcstats.bukkit</groupId>
             <artifactId>metrics</artifactId>
-            <version>1.2-SNAPSHOT</version>
+            <version>R6</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
